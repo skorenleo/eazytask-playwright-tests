@@ -594,13 +594,126 @@ tests/login.spec.ts
 
 1. Open the login page.
 2. Click **Sign in with email**.
-3. Enter email.
-4. Enter password.
+3. Enter a valid email.
+4. Enter a valid password.
 5. Click **Sign in**.
-6. Verify that the user is redirected to the dashboard.
+6. Verify the dashboard URL.
+
+## Test
+
+```ts
+import { test, expect } from '@playwright/test';
+
+test('should sign in with valid credentials', async ({ page }) => {
+  await page.goto('/login');
+
+  await expect(page).toHaveURL(/login/);
+
+  await page.getByRole('button', { name: 'Sign in with email' }).click();
+
+  await page.getByRole('textbox', { name: 'Email' }).fill('your-email@example.com');
+
+  await page.getByRole('textbox', { name: 'Password' }).fill('your-password');
+
+  await page.getByRole('button', { name: 'Sign in', exact: true }).click();
+
+  await expect(page).toHaveURL(/dashboard/);
+});
+```
+
+## Use Codegen as a Helper
+
+Open Codegen in a separate terminal:
+
+```bash
+npx playwright codegen https://task.ezvz.app/login
+```
+
+Use generated actions and locators as a reference while writing the test.
+
+Do not copy the full generated test without reviewing it.
+
+## Run the Test
+
+```bash
+npx playwright test tests/login.spec.ts
+```
+
+Use UI Mode in a separate terminal if needed:
+
+```bash
+npx playwright test --ui
+```
+
+## Check the HTML Report
+
+```bash
+npx playwright show-report
+```
+
+Verify that the test passed in the configured browsers.
+
+## Push the New Test to GitHub
+
+```bash
+git status
+git add .
+git commit -m "Add sign in test"
+git push
+```
+
+## Expected Result
+
+The Sign In test passes and the new test is available in the GitHub repository.
 
 ## Notes
 
-Write the test without Page Object Model first.
+- Codegen is a helper, not a replacement for writing tests.
+- Codegen and UI Mode can run in separate VS Code terminals.
+- Review the HTML report before pushing changes.
 
-The test will be refactored to POM later.
+# Step 16. Add a README File
+
+## Command
+
+```bash
+touch README.md
+```
+
+## What this command does
+
+Creates a README file for the project.
+
+## Add Project Information
+
+Include:
+
+- Project description
+- Tech stack
+- Test coverage
+- Project structure
+- Installation
+- How to run tests
+- How to open UI Mode
+- How to open the HTML report
+
+## Expected Result
+
+The project contains:
+
+```text
+README.md
+```
+
+## Push README to GitHub
+
+```bash
+git status
+git add .
+git commit -m "Add project README"
+git push
+```
+
+## Notes
+
+Update the README as the automation framework grows.
