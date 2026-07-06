@@ -28,11 +28,21 @@ The test suite is being developed as a practical Playwright automation project w
 eazytask-playwright-tests/
 ├── tests/
 │   └── login.spec.ts
+├── playwright-learning-notes.md
 ├── playwright.config.ts
 ├── package.json
 ├── package-lock.json
 └── README.md
 ```
+## Learning Notes
+
+Step-by-step beginner-friendly Playwright setup and learning guide:
+
+```text
+playwright-learning-notes.md
+``` 
+
+The guide documents the project setup, Playwright commands, UI Mode, Codegen, reports, and the first automated test.
 
 ## Installation
 
