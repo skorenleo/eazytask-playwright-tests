@@ -20,18 +20,19 @@ The test suite is being developed as a practical Playwright automation project w
 
 ### Authentication
 
-- Sign in with valid credentials
+✅ Sign in with valid credentials  
+✅ Show an error for invalid credentials  
+✅ Validate empty login fields
 
 ## Project Structure
 
 ```text
-eazytask-playwright-tests/
+eazytask-playwright/
 ├── tests/
-│   └── login.spec.ts
-├── playwright-learning-notes.md
+│   └── auth/
+│       └── login.spec.ts
 ├── playwright.config.ts
 ├── package.json
-├── package-lock.json
 └── README.md
 ```
 ## Learning Notes
