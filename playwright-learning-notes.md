@@ -488,22 +488,119 @@ npx playwright test --ui
 
 Without `--headed`, tests run in headless mode without a visible browser.
 
-# Step 12. Initialize Git
+# Step 12. Initialize Git and Create the First Commit
 
-## Command
+## Commands
 
 ```bash
 git init
+git status
+git add .
+git commit -m "Initial Playwright project setup"
 ```
 
-## What this command does
+## What this does
 
-Initializes a Git repository in the current project folder.
+- `git init` — initializes Git in the project.
+- `git status` — shows new and modified files.
+- `git add .` — adds all changes to staging.
+- `git commit` — creates the first commit.
 
 ## Expected Result
 
-Git creates a hidden `.git` folder.
+The first Git commit is created.
 
 ## Notes
 
-Run this command only once when creating a new Git repository.
+Use `git init` only once for a new project.
+
+# Step 13. Connect the Project to GitHub and Push
+
+## Create a GitHub Repository
+
+1. Open GitHub.
+2. Click **New repository**.
+3. Enter the repository name:
+
+```text
+eazytask-playwright-tests
+```
+
+4. Do not add README, `.gitignore`, or license.
+5. Click **Create repository**.
+
+## Commands
+
+Copy the repository URL from GitHub and run:
+
+```bash
+git remote add origin YOUR_REPOSITORY_URL
+git branch -M main
+git push -u origin main
+```
+
+## What this does
+
+- `git remote add origin` — connects the local project to GitHub.
+- `git branch -M main` — renames the current branch to `main`.
+- `git push -u origin main` — pushes the project to GitHub.
+
+## Expected Result
+
+The Playwright project appears in the GitHub repository.
+
+## Notes
+
+You only need to connect the repository with `git remote add origin` once.
+
+# Step 14. Remove the Example Test
+
+## File
+
+```text
+tests/example.spec.ts
+```
+
+## What to do
+
+Delete the example test file created during Playwright installation.
+
+## What this does
+
+Removes the default Playwright example tests from the project.
+
+## Expected Result
+
+The `tests/` folder contains:
+
+```text
+tests/
+└── login.spec.ts
+```
+
+## Notes
+
+Example tests are useful for the first Playwright run but are not needed in the EazyTask test suite.
+
+# Step 15. Create the First Sign In Test
+
+## File
+
+```text
+tests/login.spec.ts
+```
+
+## Test Scenario
+
+1. Open the login page.
+2. Click **Sign in with email**.
+3. Enter email.
+4. Enter password.
+5. Click **Sign in**.
+6. Verify that the user is redirected to the dashboard.
+
+## Notes
+
+Write the test without Page Object Model first.
+
+The test will be refactored to POM later.
