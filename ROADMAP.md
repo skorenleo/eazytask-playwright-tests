@@ -18,10 +18,10 @@ This roadmap tracks the development of the EazyTask Playwright test automation s
 ## 2. Authentication Tests
 
 - [x] Sign in with valid credentials
-- [ ] Sign in with invalid email
-- [ ] Sign in with invalid password
-- [ ] Sign in with empty fields
-- [ ] Sign out
+- [x] Sign in with invalid email
+- [x] Sign in with invalid password
+- [x] Sign in with empty fields
+- [x] Sign out
 
 ## 3. Project Management Tests
 
