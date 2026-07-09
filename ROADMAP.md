@@ -25,8 +25,8 @@ This roadmap tracks the development of the EazyTask Playwright test automation s
 
 ## 3. Project Management Tests
 
-- [ ] Create the first project
-- [ ] Create an additional project
+- [x] Create the first project
+- [x] Create an additional project
 - [ ] Open a project
 - [ ] Edit a project
 - [ ] Delete a project
