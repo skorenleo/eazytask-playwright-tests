@@ -23,7 +23,7 @@ The test suite is being developed as a practical Playwright automation project w
 ✅ Sign in with valid credentials  
 ✅ Show an error for invalid credentials  
 ✅ Validate empty login fields  
-✅ Sign out
+✅ Sign out  
 ✅ Create the first project  
 ✅ Create an additional project  
 
