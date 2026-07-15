@@ -11,6 +11,6 @@ export async function login(page: Page) {
     await page.getByRole('textbox', { name: 'Password' }).fill(validPassword);
     await page.getByRole('button', { name: 'Sign in', exact: true }).click();
     await expect(page).toHaveURL(/dashboard/);
-    //await page.pause();
+    
 }
 

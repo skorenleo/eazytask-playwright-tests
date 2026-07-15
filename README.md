@@ -26,6 +26,7 @@ The test suite is being developed as a practical Playwright automation project w
 ✅ Sign out  
 ✅ Create the first project  
 ✅ Create an additional project  
+✅ Open project  
 
 ## Project Structure
 
@@ -36,8 +37,10 @@ eazytask-playwright/
 │       └── login.spec.ts
 │   └── projects
 │       └── create-project.spec.ts
+│       └── open-project.spec.ts
 │   └── helpers
 │       └── login.ts
+│       └── open-project.ts
 ├── playwright.config.ts
 ├── package.json
 └── README.md

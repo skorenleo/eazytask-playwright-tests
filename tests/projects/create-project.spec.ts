@@ -36,7 +36,7 @@ test.describe('Create New Project', () => {
 
     test('should create additional project', async ({ page }) => {
 
-        const NameAddProject = 'Test 3';
+        const NameNewProject = 'Test 3';
 
         // verify user has at least one project
         await expect(page.getByRole('listitem').nth(1)).toBeHidden({ timeout: 20000 });
@@ -44,7 +44,7 @@ test.describe('Create New Project', () => {
         // create additional project
         await page.getByRole('button', { name: 'New Project', exact: true }).click();
         await page.getByRole('textbox', { name: 'Project Name *' }).click();
-        await page.getByRole('textbox', { name: 'Project Name *' }).fill(NameAddProject);
+        await page.getByRole('textbox', { name: 'Project Name *' }).fill(NameNewProject);
         await page.getByRole('textbox', { name: 'Description *' }).click();
         await page.getByRole('textbox', { name: 'Description *' }).fill('This is a simple project description.');
         await page.getByRole('button', { name: 'Create Project' }).click();
@@ -52,7 +52,7 @@ test.describe('Create New Project', () => {
         // Assertions
         await expect(page.getByRole('listitem').
             filter({ hasText: 'Project created successfully!' }).first()).toBeVisible();
-        await expect(page.getByRole('button', { name: NameAddProject })).toBeVisible();
+        await expect(page.getByRole('button', { name: NameNewProject })).toBeVisible();
     });
 });
 
